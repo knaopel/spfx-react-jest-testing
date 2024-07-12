@@ -1,0 +1,1 @@
+export {ItemsWithAuthorDetailsManager} from './ItemsWithAuthorDetailsManager';

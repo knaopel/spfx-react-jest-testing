@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "spfx-react-jest-testing-v-1-17-2-client-side-solution",
+    "id": "bf2bb63d-63fc-4e08-9522-4481d13fc0cd",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.17.2"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "spfx-react-jest-testing-v-1-17-2 description"
+      },
+      "longDescription": {
+        "default": "spfx-react-jest-testing-v-1-17-2 description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "spfx-react-jest-testing-v-1-17-2 Feature",
+        "description": "The feature that activates elements of the spfx-react-jest-testing-v-1-17-2 solution.",
+        "id": "4998c5eb-c20c-4ebb-9e1a-d0c52798cda9",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/spfx-react-jest-testing-v-1-17-2.sppkg"
+  }
+}
