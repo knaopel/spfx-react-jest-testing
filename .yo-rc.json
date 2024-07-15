@@ -8,12 +8,12 @@
       "@microsoft/teams-js": "2.9.1"
     },
     "version": "1.17.4",
-    "libraryName": "spfx-react-jest-testing-v-1-17-2",
+    "libraryName": "spfx-react-jest-testing",
     "libraryId": "bf2bb63d-63fc-4e08-9522-4481d13fc0cd",
     "environment": "spo",
     "packageManager": "npm",
-    "solutionName": "spfx-react-jest-testing-v-1-17-2",
-    "solutionShortDescription": "spfx-react-jest-testing-v-1-17-2 description",
+    "solutionName": "spfx-react-jest-testing",
+    "solutionShortDescription": "spfx-react-jest-testing description",
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,
     "componentType": "webpart"
