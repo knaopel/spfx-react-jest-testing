@@ -2,12 +2,12 @@
   "@microsoft/generator-sharepoint": {
     "plusBeta": false,
     "isCreatingSolution": true,
-    "nodeVersion": "16.20.1",
+    "nodeVersion": "18.18.2",
     "sdksVersions": {
       "@microsoft/microsoft-graph-client": "3.0.2",
-      "@microsoft/teams-js": "2.9.1"
+      "@microsoft/teams-js": "2.12.0"
     },
-    "version": "1.17.4",
+    "version": "1.18.2",
     "libraryName": "spfx-react-jest-testing",
     "libraryId": "bf2bb63d-63fc-4e08-9522-4481d13fc0cd",
     "environment": "spo",

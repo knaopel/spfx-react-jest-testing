@@ -6,7 +6,7 @@ Demonstration of Unit Testing for SPFx React based on the work of [Marcin Wojcie
 
 ## Used SharePoint Framework Version
 
-![version](https://img.shields.io/badge/version-1.17.4-green.svg)
+![version](https://img.shields.io/badge/version-1.18.2-green.svg)
 
 ## Applies to
 
@@ -31,6 +31,7 @@ Demonstration of Unit Testing for SPFx React based on the work of [Marcin Wojcie
 | ------- | ---------------- | --------------- |
 | 1.17.2  | July 15, 2024    |   |
 | 1.17.4  | July 15, 2024    |   |
+| 1.18.2  | July 15, 2024    |  Had to update fluent ui references in [ItemsWithAdminInfo.tsx](./src/components/ItemsWithAdminInfo.tsx). |
 
 ## Disclaimer
 

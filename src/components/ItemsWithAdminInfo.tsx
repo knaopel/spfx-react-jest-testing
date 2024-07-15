@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { ItemsWithAuthorDetailsManager } from '../manager/ItemsWithAuthorDetailsManager';
 import { IItemWithAuthor } from '../model/IItemWithAuthor';
-import { Checkbox, Spinner, Stack } from "office-ui-fabric-react";
+import { Checkbox, Spinner, Stack } from '@fluentui/react';
 
 export interface IItemsWithAdminInfoProps {
   manager: ItemsWithAuthorDetailsManager;
