@@ -7,7 +7,7 @@
       "@microsoft/microsoft-graph-client": "3.0.2",
       "@microsoft/teams-js": "2.9.1"
     },
-    "version": "1.17.2",
+    "version": "1.17.4",
     "libraryName": "spfx-react-jest-testing",
     "libraryId": "bf2bb63d-63fc-4e08-9522-4481d13fc0cd",
     "environment": "spo",
