@@ -7,10 +7,12 @@
     "**/bower_components": true,
     "**/coverage": true,
     "**/lib-amd": true,
-    "src/**/*.scss.ts": true
+    "src/**/*.scss.ts": true,
+    "**/jest-output": true,
   },
   "typescript.tsdk": ".\\node_modules\\typescript\\lib",
   "cSpell.words": [
+    "fluentui",
     "spfi",
     "testid",
     "webpart"
