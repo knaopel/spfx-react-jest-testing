@@ -55,7 +55,7 @@ jobs:
         if: success() || failure()
         with:
           name: Jest Tests
-          path: reports/jest-*.xml
+          path: jest-*.xml
           reporter: jest-junit
 
 
