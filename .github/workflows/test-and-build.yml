@@ -47,7 +47,7 @@ jobs:
         run: npx jest
 
       - name: Unit test Coverage report
-        uses: ArtionTr/jest-coverage-report-action@v2
+        uses: ArtiomTr/jest-coverage-report-action@v2
         with:
           test-script: npx jest --ci --json --coverage --testLocationInResults --outputFile=report.json 
 
