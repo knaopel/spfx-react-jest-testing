@@ -106,7 +106,7 @@ jobs:
         id: json_properties
         uses: zoexx/github-action-json-file-properties@release
         with:
-          file_path: config/package-solutions.json
+          file_path: config/package-solution.json
 
       - name: Release SPFx Package
         uses: softprops/action-gh-release@v2
