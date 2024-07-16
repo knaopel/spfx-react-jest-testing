@@ -29,7 +29,7 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
 
       - name: Cache Node modules
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         env:
           cache-name: cache-node-modules
         with:
@@ -45,11 +45,6 @@ jobs:
 
       - name: Run Unit tests
         run: npx jest
-
-      - name: Unit test Coverage report
-        uses: ArtiomTr/jest-coverage-report-action@v2
-        # with:
-        #   test-script: npx jest --ci --json --coverage --testLocationInResults --outputFile=report.json 
 
   package:
     name: Package SPFx solution
@@ -67,6 +62,9 @@ jobs:
 
       - name: Install dependencies
         run: npm install
+
+      - name: Generate Unit test Coverage report
+        uses: ArtiomTr/jest-coverage-report-action@v2
 
       - name: Bundle solution
         run: gulp bundle --ship
