@@ -2,6 +2,7 @@ name: Test and release SPFx package
 
 on:
   push:
+    branches: [master]
 
   pull_request:
 
@@ -70,7 +71,7 @@ jobs:
 
       - name: Create sppkg package
         run: gulp package-solution --ship
-          
+
       - name: publish build artifact
         uses: actions/upload-artifact@v4
         with:
@@ -86,10 +87,10 @@ jobs:
     steps:
       - name: Check out git repository
         uses: actions/checkout@v4
-        
+
       - name: Download published artifact
         uses: actions/download-artifact@v4
-        with: 
+        with:
           name: sp-pkg
 
       - name: Get Package Properties
