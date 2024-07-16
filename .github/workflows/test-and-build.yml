@@ -48,8 +48,8 @@ jobs:
 
       - name: Unit test Coverage report
         uses: ArtiomTr/jest-coverage-report-action@v2
-        with:
-          test-script: npx jest --ci --json --coverage --testLocationInResults --outputFile=report.json 
+        # with:
+        #   test-script: npx jest --ci --json --coverage --testLocationInResults --outputFile=report.json 
 
   package:
     name: Package SPFx solution
