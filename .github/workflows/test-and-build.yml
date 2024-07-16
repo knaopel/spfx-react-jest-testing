@@ -1,0 +1,75 @@
+name: Test and release SPFx package
+
+on:
+  push:
+    branches: [master]
+
+  pull_request:
+    branches: [master]
+
+  workflow_dispatch:
+
+concurrency:
+  group: test-build-and-package-${{ github.ref }}
+
+env:
+  NODE_VERSION: '18.x'
+
+jobs:
+  test:
+    name: Test SPFx with jest
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out git repository
+        uses: actions/checkout@v4
+
+      - name: Install Node.js v${{ env.NODE_VERSION }}, and NPM
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Cache Node modules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run Unit tests
+        run: npx jest
+
+      - name: Unit test Coverage report
+        uses: ArtionTr/jest-coverage-report-action@v2
+        with:
+          test-script: npx jest --ci --json --coverage --testLocationInResults --outputFile=report.json 
+
+  package:
+    name: Package SPFx solution
+    runs-on: ubuntu-latest
+    needs: test
+    if: ${{ github.event_name == 'push' }}
+    steps:
+      - name: Check out git repository
+        uses: actions/checkout@v4
+
+      - name: Install Node.js v${{ env.NODE_VERSION }}, and NPM
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Bundle solution
+        run: gulp bundle --ship
+
+      - name: Create sppkg package
+        run: gulp package-solution --ship
