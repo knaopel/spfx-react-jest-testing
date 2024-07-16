@@ -1,5 +1,7 @@
 # spfx-react-jest-testing
 
+[![Test and release SPFx package](https://github.com/knaopel/spfx-react-jest-testing/actions/workflows/test-and-build.yml/badge.svg)](https://github.com/knaopel/spfx-react-jest-testing/actions/workflows/test-and-build.yml)
+
 ## Summary
 
 Demonstration of Unit Testing for SPFx React based on the work of [Marcin Wojciechowski][marcin-wojciechowski] in the project [spfx-webpart][spfx-webpart-code]. I will create branches based on various versions of the SPFX framework.
