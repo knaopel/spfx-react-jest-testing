@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="10" failures="0" errors="0" time="30.007">
+  <testsuite name="tests\dal\DIListItemProvider.test.ts" errors="0" failures="0" skipped="0" timestamp="2024-07-16T19:59:04" time="17.538" tests="2">
+    <testcase classname="DIListItemProvider" name="Should call the correct URL when calling getById" time="0.069">
+    </testcase>
+    <testcase classname="DIListItemProvider" name="Should call the correct URL when calling getListItems" time="0.002">
+    </testcase>
+  </testsuite>
+  <testsuite name="tests\dal\PnPListItemProvider.test.ts" errors="0" failures="0" skipped="0" timestamp="2024-07-16T19:59:04" time="18.097" tests="2">
+    <testcase classname="PnPListItemProvider" name="Should call the correct methods weh calling getListItems" time="0.037">
+    </testcase>
+    <testcase classname="PnPListItemProvider" name="Should call the correct methods when cfalling getById" time="0.002">
+    </testcase>
+  </testsuite>
+  <testsuite name="tests\dal\SPContextListItemProvider.test.ts" errors="0" failures="0" skipped="0" timestamp="2024-07-16T19:59:04" time="18.101" tests="2">
+    <testcase classname="SPContextListItemProvider" name="Should call the correct URL when calling getListItems" time="0.033">
+    </testcase>
+    <testcase classname="SPContextListItemProvider" name="Should call the correct URL when calling getById" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="tests\manager\ItemsWithAuthorDetailsManager.test.ts" errors="0" failures="0" skipped="0" timestamp="2024-07-16T19:59:04" time="18.122" tests="1">
+    <testcase classname="ItemsWithAuthorDetailsManager" name="should get users" time="0.031">
+    </testcase>
+  </testsuite>
+  <testsuite name="tests\components\ItemsWithAdminInfo.test.tsx" errors="0" failures="0" skipped="0" timestamp="2024-07-16T19:59:04" time="24.054" tests="3">
+    <testcase classname="ItemsWithAdminInfo" name="should display spinner while loading" time="0.079">
+    </testcase>
+    <testcase classname="ItemsWithAdminInfo" name="should display items when loaded" time="0.123">
+    </testcase>
+    <testcase classname="ItemsWithAdminInfo" name="should handle error when getting items fails" time="0.013">
+    </testcase>
+  </testsuite>
+</testsuites>
