@@ -43,15 +43,19 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Jest Action
-        uses: willcaul/jest-github-action@v4
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          test-command: npx jest --coverage
+      # - name: Jest Action
+      #   uses: willcaul/jest-github-action@v4
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #   with:
+      #     test-command: npx jest --coverage
 
       - name: Run Unit tests
-        run: npx jest
+        run: |
+          npx jest --coverage --coverageReporters json-summary
+
+      - name: Jest Coverage Comment
+        uses: MishaKav/jest-coverage-comment@main
 
   package:
     name: Package SPFx solution
