@@ -58,7 +58,7 @@
     "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$"
   },
   "jest-junit": {
-    "ouputDirectory": "reports",
+    "ouputDirectory": "./reports",
     "outputName": "jest-junit.xml",
     "ancestorSeperator": " > ",
     "uniqueOutputName": false,
