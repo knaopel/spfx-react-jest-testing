@@ -104,6 +104,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          files: *.sppkg
+          files: spfx-react-jest-testing.sppkg
           tag_name: ${{ steps.json_properties.solution.version }}
           name: Release v${{ steps.json_properties.solution.version }}
