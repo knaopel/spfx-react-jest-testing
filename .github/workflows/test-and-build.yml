@@ -64,9 +64,22 @@ jobs:
     runs-on: ubuntu-latest
     needs: test
     if: ${{ github.event_name == 'push' }}
+    outputs:
+      tag_name: ${{ steps.json_properties.outputs.solution.version }}
     steps:
       - name: Check out git repository
         uses: actions/checkout@v4
+
+      - name: Get Package Properties
+        id: json_properties
+        uses: zoexx/github-action-json-file-properties@release
+        with:
+          file_path: config/package-solution.json
+
+      - name: Tag Repo
+        run: |
+          git tag -f v${{ steps.json_properties.outputs.solution.version }}
+          git push --tags --force
 
       - name: Install Node.js v${{ env.NODE_VERSION }}, and NPM
         uses: actions/setup-node@v4
@@ -90,30 +103,34 @@ jobs:
           if-no-files-found: error
 
   release:
-    name: Release SPFx solution
-    runs-on: ubuntu-latest
-    needs: package
-    steps:
-      - name: Check out git repository
-        uses: actions/checkout@v4
+    uses: ./.github/workflows/release.yml
+    with: 
+      tag_name: ${{ needs.package.tag_name }}
+      artifact_name: sp-pkg
+    # name: Release SPFx solution
+    # runs-on: ubuntu-latest
+    # needs: package
+    # steps:
+    #   - name: Check out git repository
+    #     uses: actions/checkout@v4
 
-      - name: Download published artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: sp-pkg
+    #   - name: Download published artifact
+    #     uses: actions/download-artifact@v4
+    #     with:
+    #       name: sp-pkg
 
-      - name: Get Package Properties
-        id: json_properties
-        uses: zoexx/github-action-json-file-properties@release
-        with:
-          file_path: config/package-solution.json
+    #   - name: Get Package Properties
+    #     id: json_properties
+    #     uses: zoexx/github-action-json-file-properties@release
+    #     with:
+    #       file_path: config/package-solution.json
 
-      - name: Release SPFx Package
-        uses: softprops/action-gh-release@v2
-        continue-on-error: true
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          files: spfx-react-jest-testing.sppkg
-          tag_name: ${{ steps.json_properties.solution.version }}
-          name: Release v${{ steps.json_properties.solution.version }}
+    #   - name: Release SPFx Package
+    #     uses: softprops/action-gh-release@v2
+    #     continue-on-error: true
+    #     env:
+    #       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    #     with:
+    #       files: spfx-react-jest-testing.sppkg
+    #       tag_name: ${{ steps.json_properties.solution.version }}
+    #       name: Release v${{ steps.json_properties.solution.version }}
