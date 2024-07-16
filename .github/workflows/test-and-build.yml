@@ -103,6 +103,7 @@ jobs:
           if-no-files-found: error
 
   release:
+    needs: package
     uses: ./.github/workflows/release.yml
     with: 
       tag_name: ${{ needs.package.tag_name }}
