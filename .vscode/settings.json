@@ -15,6 +15,7 @@
     "fluentui",
     "spfi",
     "testid",
-    "webpart"
+    "webpart",
+    "webparts"
   ]
 }

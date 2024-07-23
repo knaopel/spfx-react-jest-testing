@@ -7,7 +7,7 @@ import '@pnp/sp/batching';
 
 let _sp: SPFI;
 
-export const getSP = (context: WebPartContext): SPFI => {
+export const getSP = (context?: WebPartContext): SPFI => {
   if (_sp === undefined || _sp === null) {
     _sp = spfi().using(SPFx(context as WebPartContext));
   }
