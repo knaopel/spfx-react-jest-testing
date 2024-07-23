@@ -22,13 +22,13 @@ export function ItemsWithAdminInfo(props: IItemsWithAdminInfoProps): JSX.Element
   }, []);
 
   if (loading) {
-    return <Spinner data-testid="spinner" />
+    return <Spinner role='progressbar' />
   }
   return (
     <Stack>
       {items.map((item) => (
-        <Stack horizontal key={item.Id}>
-          <Stack.Item>{item.Title}</Stack.Item>
+        <Stack horizontal key={item.Id} tokens={{ childrenGap: 10 }}>
+          <Stack.Item>{item.Title || '<No Title>'}</Stack.Item>
           <Stack.Item>{item.Author.Title}</Stack.Item>
           <Stack.Item>{item.Author.JobTitle}</Stack.Item>
           <Stack.Item>{<Checkbox label='Is admin' disabled checked={item.Author.IsSiteAdmin} />}</Stack.Item>

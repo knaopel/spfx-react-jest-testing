@@ -47,7 +47,7 @@ describe('ItemsWithAdminInfo', () => {
     render(<ItemsWithAdminInfo manager={mockManager} />);
 
     // Assert
-    expect(screen.getByTestId('spinner')).toBeInTheDocument();
+    expect(screen.getByRole('progressbar')).toBeInTheDocument();
   });
 
   it('should display items when loaded', async () => {
@@ -65,6 +65,19 @@ describe('ItemsWithAdminInfo', () => {
     });
 
   });
+
+  it('should display default text when no title is available', async () => {
+    // Arrange
+    mockItems[0] = {...mockItems[0], Title: undefined} as unknown as IItemWithAuthor;
+
+    // Act
+    render(<ItemsWithAdminInfo manager={mockManager} />);
+
+    // Assert
+    await waitFor(() => {
+      expect(screen.getByText('<No Title>')).toBeInTheDocument();
+    });
+  })
 
   it('should handle error when getting items fails', async () => {
     // Arrange
