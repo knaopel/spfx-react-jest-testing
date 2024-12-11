@@ -49,6 +49,11 @@ jobs:
       - name: Jest Coverage Comment
         uses: MishaKav/jest-coverage-comment@v1.0.26
 
+      - name: list files
+        run: |
+          ls
+          ls reports
+
       - name: Test Report
         uses: phoenix-actions/test-reporting@v15
         id: test-report
