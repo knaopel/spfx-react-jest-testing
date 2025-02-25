@@ -42,12 +42,20 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Make Report Directory
+        run: mkdir reports
+
       - name: Run Unit tests
         run: |
-          npx jest --coverage --coverageReporters json-summary
+          npx jest --reporters=default --reporters=jest-junit --coverage --coverageReporters json-summary
 
       - name: Jest Coverage Comment
         uses: MishaKav/jest-coverage-comment@v1.0.26
+
+      - name: list files
+        run: |
+          ls
+          ls reports
 
       - name: Test Report
         uses: phoenix-actions/test-reporting@v15
@@ -55,7 +63,7 @@ jobs:
         if: success() || failure()
         with:
           name: Jest Tests
-          path: jest-*.xml
+          path: reports/jest-*.xml
           reporter: jest-junit
 
 

@@ -66,9 +66,9 @@
     ]
   },
   "jest-junit": {
-    "ouputDirectory": "./reports",
+    "outputDirectory": "./reports",
     "outputName": "jest-junit.xml",
-    "ancestorSeperator": " > ",
+    "ancestorSeparator": " > ",
     "uniqueOutputName": false,
     "suiteNameTemplate": "{filepath}",
     "classNameTemplate": "{classname}",
